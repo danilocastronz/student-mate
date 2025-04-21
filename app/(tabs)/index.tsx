@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as SecureStore from "expo-secure-store";
-import { router } from "expo-router";
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
