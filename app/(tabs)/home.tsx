@@ -1,6 +1,6 @@
 // app/(tabs)/index.tsx
 import { Link } from "expo-router";
-import { View, Text, StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function HomeScreen() {
   return (

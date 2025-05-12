@@ -1,6 +1,6 @@
 // app/(tabs)/assignments.tsx
-import { View, Text, StyleSheet, Pressable } from "react-native";
 import { router } from "expo-router";
+import { Button, Pressable, StyleSheet, Text, View } from "react-native";
 
 const assignments = [
   { id: "1", title: "Math Homework" },
@@ -12,7 +12,6 @@ export default function AssignmentsScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Upcoming Assignments 📑</Text>
-
       {assignments.map((assignment) => (
         <Pressable
           key={assignment.id}
@@ -22,6 +21,10 @@ export default function AssignmentsScreen() {
           <Text style={styles.itemText}>{assignment.title}</Text>
         </Pressable>
       ))}
+      <Button
+        title="Add Assignment"
+        onPress={() => router.push("/add-assignment")} // Opens our modal
+      />
     </View>
   );
 }
