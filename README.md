@@ -1,50 +1,111 @@
-# Welcome to your Expo app 👋
+# 📚 Student Mate
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+⚠️ Student Mate is a fictitious app and does not reflect or is based on any real world app. ⚠️
 
-## Get started
+**Student Mate** is a fictitious mobile app designed for university students to manage their academic life efficiently. Built with **React Native**, **Expo**, and **TypeScript**, it offers features like class schedules, assignment tracking, and profile management. The idea is just to use a real use case, such as an university app, to illustrate mobile development concepts.
 
-1. Install dependencies
+---
+
+## 🚀 Features
+
+- **Tab Navigation**: Seamless navigation between Home, Classes, Assignments, and Profile screens using Expo Router.
+- **Dynamic Routing**: View detailed pages for individual assignments and classes.
+- **Modal Screens**: Add new assignments through modal overlays.
+- **Authentication Flow**: Secure login and logout functionality.
+- **Data Persistence**: Store user data and preferences using `AsyncStorage` and `SecureStore`.
+- **Theming**: Toggle between light and dark themes based on user preference.
+
+---
+
+## 🛠️ Installation
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/yourusername/student-mate.git
+   cd student-mate
+   ```
+
+2. **Install Dependencies**:
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. **Start the Development Server**:
 
    ```bash
-    npx expo start
+   npm start
    ```
 
-In the output, you'll find options to open the app in a
+   Use the Expo Go app on your device or an emulator to view the app.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## 📁 Project Structure
 
 ```bash
-npm run reset-project
+student-mate/
+├── app/
+│   ├── (tabs)/
+│   │   ├── index.tsx          # Home Screen
+│   │   ├── classes.tsx        # Classes Screen
+│   │   ├── assignments.tsx    # Assignments Screen
+│   │   └── profile.tsx        # Profile Screen
+│   ├── assignments/
+│   │   └── [id].tsx           # Assignment Details (Dynamic Route)
+│   ├── classes/
+│   │   └── [classId].tsx      # Class Details (Dynamic Route)
+│   ├── (modals)/
+│   │   └── add-assignment.tsx # Add Assignment Modal
+│   └── _layout.tsx            # Root Layout with Providers
+├── context/
+│   └── AuthContext.tsx        # Authentication Context
+├── themes/
+│   └── theme.ts               # Light and Dark Theme Definitions
+├── assets/
+│   └── ...                    # Images and other assets
+├── app.json                   # Expo Configuration
+└── package.json
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🔐 Authentication
 
-To learn more about developing your project with Expo, look at the following resources:
+Authentication is managed using React Context API. The `AuthContext` provides methods for signing in and out, and the user's authentication state is persisted using `AsyncStorage`.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## 💾 Data Persistence
 
-Join our community of developers creating universal apps.
+- **AsyncStorage**: Used for storing non-sensitive data like theme preferences.
+- **SecureStore**: Utilized for securely storing sensitive information such as authentication tokens.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## 🎨 Theming
+
+The app supports both light and dark themes. The current theme is determined based on the user's system preferences and can be toggled within the app. Theming is implemented using React Native's `useColorScheme` hook and custom theme definitions.
+
+---
+
+## 🧪 Testing
+
+To test the app:
+
+1. Start the development server:
+
+   ```bash
+   npm start
+   ```
+
+2. Use the Expo Go app to scan the QR code and launch the app on your device.
+
+3. Navigate through the app to test various features like navigation, authentication, and theming.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
