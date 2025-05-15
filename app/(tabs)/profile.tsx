@@ -1,15 +1,20 @@
-// app/(tabs)/profile.tsx
-import { View, Text, StyleSheet } from "react-native";
+import { Text, View } from "react-native";
+import { useAuth } from "../context/AuthContext";
 
-export default function ProfileScreen() {
+export default function Profile() {
+  const { user } = useAuth();
+
+  if (!user) {
+    return (
+      <View>
+        <Text>You must sign in to access this page.</Text>
+      </View>
+    );
+  }
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Your Profile 👤</Text>
+    <View>
+      <Text>Welcome, {user}</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center", alignItems: "center" },
-  title: { fontSize: 24, color: "grey" },
-});
